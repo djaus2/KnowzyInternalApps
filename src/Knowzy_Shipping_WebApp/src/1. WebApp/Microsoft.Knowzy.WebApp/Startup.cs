@@ -62,6 +62,12 @@ namespace Microsoft.Knowzy.WebApp
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                ServeUnknownFileTypes = true,
+                DefaultContentType = "text/plain"
+            });
+
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
